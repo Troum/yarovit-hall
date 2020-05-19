@@ -1,0 +1,29 @@
+@import "../variables";
+
+#contact {
+  & #{$prefix}_contact-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    min-height: calc(100vh - 102px);
+    background: #1f4068;
+    color: #fff;
+    & #{$prefix}_contact-phone, & #{$prefix}_contact-email, & #{$prefix}_contact-address {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+  & #{$prefix}_contact-map {
+    display: block;
+    & .ymap-container {
+      height: 100%;
+    }
+  }
+}

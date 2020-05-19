@@ -1,0 +1,116 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~bootstrap-vue/dist/bootstrap-vue.min.css";
+@import "~animate.css/animate.min.css";
+@import "~viewerjs/dist/viewer.min.css";
+
+@import "./components/navbar.component";
+@import "./components/carousel.component";
+@import "./components/raider.component";
+@import "./components/contact.component";
+@import "./components/sidebar.component";
+
+body {
+  font-family: 'Jost', sans-serif;
+  overflow-x: hidden;
+}
+
+[class*="ymaps-2"][class*="-ground-pane"]{
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+  -webkit-filter:grayscale(100%);
+}
+
+#event {
+  & #{$prefix}_event-images {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px 8px;
+    background: #a9a9a9;
+    min-height: calc(100vh - 102px);
+    margin: 102px 0 0 0;
+    & .column {
+      flex: 33.3333%;
+      max-width: 33.3333%;
+      padding: 0 4px;
+      @media (max-width: 1199px) {
+        flex: 50%;
+        max-width: 50%;
+      }
+      & img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+      }
+    }
+  }
+}
+
+#gallery {
+  & #{$prefix}_gallery-images {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px 8px;
+    background: #a9a9a9;
+    min-height: calc(100vh - 102px);
+    margin: 102px 0 0 0;
+    & .column {
+      flex: 33.3333%;
+      max-width: 33.3333%;
+      padding: 0 4px;
+      @media (max-width: 1199px) {
+        flex: 50%;
+        max-width: 50%;
+      }
+      & img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+      }
+    }
+  }
+}
+
+#{$prefix}_event-show-sidebar {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2d3999;
+  color: #fff;
+  bottom: 5%;
+  right: 5%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+#{$prefix}_show-map {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2d3999;
+  color: #fff;
+  bottom: 5%;
+  right: 5%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.modal-body, .modal-header {
+  padding: 0!important;
+  border: none!important;
+}
+.modal-content {
+  background: transparent!important;
+}

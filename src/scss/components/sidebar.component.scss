@@ -1,0 +1,17 @@
+@import "../variables";
+
+#sidebar, #sidebar-menu {
+    background: #1f4068!important;
+    color: #ffffff!important;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    & * {
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+    & .close {
+        margin: 0;
+    }
+}

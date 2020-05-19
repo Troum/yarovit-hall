@@ -1,18 +1,23 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang="pug">
+    b-row.m-0.p-0
+        b-col.m-0.p-0( cols="12" )
+            homepage-carousel-component
+        b-col#raider-container.m-0.p-0( cols="12" )
+            raider-component
+        b-col#contact-container.m-0.p-0( cols="12" )
+            contacts-component
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name: 'Home',
+        mounted() {
+            this.$root.$on('scroll-to', (id) => {
+                setTimeout(() => {
+                    document.getElementById(id).scrollIntoView({block: 'start', behavior: 'smooth'})
+                }, 2500)
+            })
+        }
+    }
 </script>

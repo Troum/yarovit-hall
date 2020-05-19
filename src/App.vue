@@ -1,32 +1,16 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+<template lang="pug">
+    b-container#app.m-0.p-0( fluid )
+        b-row.m-0.p-0
+            b-col.m-0.p-0( cols="12" )
+                navbar-component
+            b-col.m-0.p-0#main( cols="12" )
+                transition( enter-active-class="animated fadeIn" leave-active-class="animated fadeOut" mode="out-in" )
+                    router-view
+        transition( enter-active-class="animated fadeIn" leave-active-class="animated fadeOut" mode="out-in" )
+            loading-screen-component( v-if="$store.getters.loading" )
+        map-modal
 </template>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+    export default {
     }
-  }
-}
-</style>
+</script>
